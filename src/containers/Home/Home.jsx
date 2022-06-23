@@ -6,13 +6,12 @@ const Home = (props) =>{
 
     return(
         <div id="Homewall">
-            <div>
+            <div className="homewalljumbotron">
                 <p>"Literally, on fire..."</p>
-                <img src="" alt="" />
+             
             </div>
         </div>
     )
-
 }
 
 export default Home;

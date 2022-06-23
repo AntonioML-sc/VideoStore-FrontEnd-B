@@ -1,0 +1,29 @@
+#Homewall{
+    background-color: darkred;
+
+    width: 100vw;
+    
+
+}
+
+.homewalljumbotron{
+    background-color: rebeccapurple;
+    background-image: url(../../assets/HomePageImg/main.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 30em;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.homewalljumbotron > p {
+    font-size: 2em;
+    color: red;
+    font-weight: bolder;
+    font-style: italic;
+    background-color: rgba(12, 12, 12, 0.461);
+    padding: 0.3em;
+}
