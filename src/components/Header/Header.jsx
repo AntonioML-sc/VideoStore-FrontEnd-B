@@ -16,8 +16,8 @@ const Header = () => {
                 <div className="item"><NavLink to="/aboutus">About Us</NavLink></div>
             </div>
             <div className="headeritems">
-                <div className="item"><a className="headerlinks" href="http://">Sign up</a></div>
-                <div className="item"><a className="headerlinks" href="http://">Log in</a></div>
+                <div className="item"><NavLink to="/signup">Sign up</NavLink></div>
+                <div className="item"><NavLink to="/login">Log in</NavLink></div>
             </div>
 
         </div>
