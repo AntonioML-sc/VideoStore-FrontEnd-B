@@ -1,0 +1,33 @@
+.footer {
+    height: 8em;
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0;
+    margin: 0;
+}
+
+.logo{
+    height: 2em;
+}
+.logoContainer{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    height: 5.4em;
+}
+.footLeft{
+    text-align: center;
+}
+.footRight {
+    text-align: center;
+}
+a {
+    text-decoration: none;
+    color: white;
+}
+.credit{
+    color: white;
+}
