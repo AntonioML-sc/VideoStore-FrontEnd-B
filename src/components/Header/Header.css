@@ -1,0 +1,47 @@
+#Headerwall{
+    background-color: black;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:space-between;
+
+    box-sizing: border-box;
+
+    color: white;
+
+    height: 4em;
+
+   
+
+}
+
+.headeritems{
+    /* background-color: purple; */
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 1em;
+}
+
+.item{
+   /*  background-color: green; */
+
+    margin: 1em;
+}
+
+.headerlinks {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+}
+
+.headerlinks:hover {
+    text-decoration: none;
+    color: red;
+    font-weight: 500;
+}
+
+
