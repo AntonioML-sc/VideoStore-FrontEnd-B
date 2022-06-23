@@ -1,0 +1,36 @@
+.cont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    height: 100vh;
+    width: 100vw;
+}
+
+.searchBar {
+    text-align: center;
+    font-size: 3em;
+    font-weight: 1em;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: red;
+    height: 6em;
+}
+
+.filmList {
+    text-align: center;
+    font-size: 3em;
+    font-weight: 1em;
+    color: white;
+    min-height: 84vh;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: left;
+}
