@@ -12,7 +12,7 @@
     background-color: red;    
     text-align: center;
     font-size: 1em;
-    font-weight: 1em;
+    font-weight: bold;
     color: white;
     display: flex;
     flex-direction: row;
@@ -26,7 +26,7 @@
     background-color: blue;
     text-align: center;
     font-size: 3em;
-    font-weight: 1em;
+    font-style: italic;
     color: white;
     min-height: 92%;
     height: fit-content;
