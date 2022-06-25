@@ -37,3 +37,10 @@
     align-items: center;
     justify-content: center;
 }
+
+.searchBarForm {    
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
