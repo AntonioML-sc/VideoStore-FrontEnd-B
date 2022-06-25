@@ -4,13 +4,19 @@ import "./Films.css"
 import axios from 'axios'
 
 const Films = props => {
-    let [films, setFilms] = useState([])
+    let [data, setData] = useState({
+        films: [],
+        search: ""
+    })
 
     useEffect(() => {
         axios.get('http://localhost:5000/films')
         .then(resp => {
             console.log(resp.data);
-            setFilms(resp.data);
+            setData({
+                ...data,
+                films: resp.data
+            });
         })
     }, [])
 
