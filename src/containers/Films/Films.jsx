@@ -80,8 +80,18 @@ const Films = props => {
                 <div className="searchByGenreMenu">
                     <p className="genres">Genres:</p>
                     <form className="sideBarSearch">
-                        <input className="genreButton" type="button" value="horror" onClick={setGenre} name="search" />
+                        <input className="genreButton" type="button" value="action" onClick={setGenre} name="search" />
+                        <input className="genreButton" type="button" value="adventure" onClick={setGenre} name="search" />
+                        <input className="genreButton" type="button" value="animation" onClick={setGenre} name="search" />
+                        <input className="genreButton" type="button" value="biopic" onClick={setGenre} name="search" />
                         <input className="genreButton" type="button" value="comedy" onClick={setGenre} name="search" />
+                        <input className="genreButton" type="button" value="crime" onClick={setGenre} name="search" />
+                        <input className="genreButton" type="button" value="drama" onClick={setGenre} name="search" />
+                        <input className="genreButton" type="button" value="fantasy" onClick={setGenre} name="search" />
+                        <input className="genreButton" type="button" value="horror" onClick={setGenre} name="search" />
+                        <input className="genreButton" type="button" value="romance" onClick={setGenre} name="search" />
+                        <input className="genreButton" type="button" value="sci-fi" onClick={setGenre} name="search" />
+                        <input className="genreButton" type="button" value="thriller" onClick={setGenre} name="search" />
                     </form>
                 </div>
                 <div className="emptySpace"></div>
