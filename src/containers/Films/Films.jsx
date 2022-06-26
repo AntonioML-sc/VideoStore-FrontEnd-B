@@ -24,7 +24,7 @@ const Films = props => {
         <div className="cont">
             <div className="searchBar">SearchBar</div>
             <div className="filmsList">
-                Container for film cards
+                <img src={data.films[19].image} alt="" srcset="" />
             </div>
         </div>
     )

@@ -5,6 +5,7 @@ import Footer from './components/Footer/Footer'
 import AboutUs from './containers/AboutUs/AboutUs'
 import Home from "./containers/Home/Home";
 import Films from "./containers/Films/Films";
+import Login from "./containers/Login/Login";
 import './App.css'
 
 
@@ -20,6 +21,7 @@ function App() {
           <Route path="/" element={<Home/>}/>          
           <Route path="/aboutus" element={<AboutUs />}/>
           <Route path="/films" element={<Films />}/>        
+          <Route path="/login" element={<Login />}/>        
         </Routes>
         <Footer />
       </BrowserRouter>
