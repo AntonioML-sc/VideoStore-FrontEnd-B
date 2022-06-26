@@ -5,6 +5,7 @@ import Footer from './components/Footer/Footer'
 import AboutUs from './containers/AboutUs/AboutUs'
 import Home from "./containers/Home/Home";
 import Films from "./containers/Films/Films";
+import Signup from "./components/Signup/Signup";
 import './App.css'
 
 
@@ -19,7 +20,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home/>}/>          
           <Route path="/aboutus" element={<AboutUs />}/>
-          <Route path="/films" element={<Films />}/>        
+          <Route path="/films" element={<Films />}/> 
+          <Route path="/signup" element={<Signup />}/>         
         </Routes>
         <Footer />
       </BrowserRouter>
