@@ -1,0 +1,10 @@
+.FilmCard {
+    padding: 1em;
+    margin: 1em;
+    background-color: black;
+    color: white;
+    border-radius: 1em;
+    border: .1em solid white;
+    height: 10em;
+    width: 6em;
+}
