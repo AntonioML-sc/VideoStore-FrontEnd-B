@@ -38,16 +38,29 @@ const Films = props => {
         })
     }
 
+    const hideSearchScreen = () => {
+        document.getElementsByClassName("searchByGenreScreen")[0].style.display = "none";
+    }
+
+    const showSearchScreen = () => {
+        document.getElementsByClassName("searchByGenreScreen")[0].style.display = "flex";
+    }
+
     return (
         <div className="cont">
             <div className="searchBar">
+                <button className="showSearchScreenButton" onClick={showSearchScreen}>Genres</button>
                 <form className="searchBarForm">
                     <div>
-                        <label>Search by title:</label>
+                        <label>Search by title: </label>
                         <input type="text" value={data.search} onChange={handleChange} name="search" />
                     </div>
                 </form>
             </div>
+            <button className="searchByGenreScreen" onClick={hideSearchScreen}>
+                <div className="searchByGenreMenu"></div>
+                <div className="emptySpace"></div>
+            </button>
             <div className="filmsList">
                 Container for film cards
             </div>
