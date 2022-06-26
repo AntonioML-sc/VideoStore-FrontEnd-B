@@ -2,6 +2,7 @@ import React from "react"
 import { useState, useEffect } from 'react'
 import "./Films.css"
 import axios from 'axios'
+import FilmCard from '../../components/FilmCard/FilmCard'
 
 const Films = props => {
     let [data, setData] = useState({
@@ -14,7 +15,7 @@ const Films = props => {
         if (data.search == "") {
             axios.get('http://localhost:5000/films')
                 .then(resp => {
-                    console.log(resp.data);
+                    // console.log(resp.data);
                     setData({
                         ...data,
                         films: resp.data
@@ -23,7 +24,7 @@ const Films = props => {
         } else if (data.searchType == "title") {
             axios.get(`http://localhost:5000/films/getByTitle/${data.search}`)
                 .then(resp => {
-                    console.log(resp.data);
+                    // console.log(resp.data);
                     setData({
                         ...data,
                         films: resp.data
@@ -32,7 +33,7 @@ const Films = props => {
         } else if (data.searchType == "genre") {
             axios.get(`http://localhost:5000/films/getByGenre/${data.search}`)
                 .then(resp => {
-                    console.log(resp.data);
+                    // console.log(resp.data);
                     setData({
                         ...data,
                         films: resp.data
@@ -97,7 +98,11 @@ const Films = props => {
                 <div className="emptySpace"></div>
             </div>
             <div className="filmsList">
-                Container for film cards
+                {
+                    data.films.map((film) => (
+                        <FilmCard data={film} key={film.id} />
+                    ))
+                }
             </div>
         </div>
     )
