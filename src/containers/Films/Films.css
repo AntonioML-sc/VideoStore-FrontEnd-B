@@ -49,7 +49,7 @@
 .searchByGenreScreen {
     background-color: transparent;
     border: none;
-    display: flex;
+    display: none;
     flex-direction: row;
     width: 100%;
     height: 100%;
@@ -71,7 +71,11 @@
     background-color: black;
     width: 20%;
     height: 100%;
+    display: flex;
+    flex-direction: column;
     color: white;
+    justify-content: left;
+    text-align: left;
 }
 
 .emptySpace {
@@ -79,4 +83,23 @@
     opacity: 0.5;
     width: 80%;
     height: 100%;
+}
+
+.genres {
+    margin: 0.3em;
+    font-size: 1.2em;
+}
+
+.genreButton {
+    background-color: transparent;
+    border: none;
+    margin: 0.3em;
+    font-size: 1.2em;
+    color: white;
+    text-align: left;
+}
+
+.sideBarSearch {
+    display: flex;
+    flex-direction: column;
 }

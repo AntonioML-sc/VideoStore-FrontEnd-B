@@ -6,7 +6,8 @@ import axios from 'axios'
 const Films = props => {
     let [data, setData] = useState({
         films: [],
-        search: ""
+        search: "",
+        searchType: ""
     })
 
     useEffect(() => {
@@ -19,8 +20,17 @@ const Films = props => {
                         films: resp.data
                     });
                 })
-        } else {
+        } else if (data.searchType == "title") {
             axios.get(`http://localhost:5000/films/getByTitle/${data.search}`)
+                .then(resp => {
+                    console.log(resp.data);
+                    setData({
+                        ...data,
+                        films: resp.data
+                    });
+                })
+        } else if (data.searchType == "genre") {
+            axios.get(`http://localhost:5000/films/getByGenre/${data.search}`)
                 .then(resp => {
                     console.log(resp.data);
                     setData({
@@ -34,7 +44,8 @@ const Films = props => {
     const handleChange = (event) => {
         setData({
             ...data,
-            [event.target.name]: event.target.value
+            [event.target.name]: event.target.value,
+            searchType: "title"
         })
     }
 
@@ -44,6 +55,14 @@ const Films = props => {
 
     const showSearchScreen = () => {
         document.getElementsByClassName("searchByGenreScreen")[0].style.display = "flex";
+    }
+
+    const setGenre = (event) => {
+        setData({
+            ...data,
+            search: event.target.value,
+            searchType: "genre"
+        })
     }
 
     return (
@@ -57,10 +76,16 @@ const Films = props => {
                     </div>
                 </form>
             </div>
-            <button className="searchByGenreScreen" onClick={hideSearchScreen}>
-                <div className="searchByGenreMenu"></div>
+            <div className="searchByGenreScreen" onClick={hideSearchScreen}>
+                <div className="searchByGenreMenu">
+                    <p className="genres">Genres:</p>
+                    <form className="sideBarSearch">
+                        <input className="genreButton" type="button" value="horror" onClick={setGenre} name="search" />
+                        <input className="genreButton" type="button" value="comedy" onClick={setGenre} name="search" />
+                    </form>
+                </div>
                 <div className="emptySpace"></div>
-            </button>
+            </div>
             <div className="filmsList">
                 Container for film cards
             </div>
