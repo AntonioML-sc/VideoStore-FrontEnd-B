@@ -12,34 +12,42 @@ const Films = props => {
     })
 
     useEffect(() => {
-        if (data.search == "") {
-            axios.get('http://localhost:5000/films')
-                .then(resp => {
-                    // console.log(resp.data);
-                    setData({
-                        ...data,
-                        films: resp.data
-                    });
-                })
-        } else if (data.searchType == "title") {
-            axios.get(`http://localhost:5000/films/getByTitle/${data.search}`)
-                .then(resp => {
-                    // console.log(resp.data);
-                    setData({
-                        ...data,
-                        films: resp.data
-                    });
-                })
-        } else if (data.searchType == "genre") {
-            axios.get(`http://localhost:5000/films/getByGenre/${data.search}`)
-                .then(resp => {
-                    // console.log(resp.data);
-                    setData({
-                        ...data,
-                        films: resp.data
-                    });
-                })
+        async function fetchFilms() {
+            try {
+                if (data.search == "") {
+                    await axios.get('https://aml-mysql-28-06-22-videostore.herokuapp.com/films')
+                        .then(resp => {
+                            // console.log(resp.data);
+                            setData({
+                                ...data,
+                                films: resp.data
+                            });
+                        })
+                } else if (data.searchType == "title") {
+                    await axios.get(`https://aml-mysql-28-06-22-videostore.herokuapp.com/films/getByTitle/${data.search}`)
+                        .then(resp => {
+                            // console.log(resp.data);
+                            setData({
+                                ...data,
+                                films: resp.data
+                            });
+                        })
+                } else if (data.searchType == "genre") {
+                    await axios.get(`https://aml-mysql-28-06-22-videostore.herokuapp.com/films/getByGenre/${data.search}`)
+                        .then(resp => {
+                            // console.log(resp.data);
+                            setData({
+                                ...data,
+                                films: resp.data
+                            });
+                        })
+                }
+            } catch (error) {
+                console.log(error)
+            }
         }
+
+        fetchFilms()
     }, [data.search])
 
     const handleChange = (event) => {
@@ -73,7 +81,7 @@ const Films = props => {
                 <form className="searchBarForm">
                     <div>
                         <label>Search by title: </label>
-                        <input type="text" value={data.search} onChange={handleChange} name="search" />
+                        <input type="text" onChange={handleChange} name="search" />
                     </div>
                 </form>
             </div>
