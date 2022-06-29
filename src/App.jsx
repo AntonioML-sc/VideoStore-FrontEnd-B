@@ -6,6 +6,7 @@ import AboutUs from './containers/AboutUs/AboutUs'
 import Home from "./containers/Home/Home";
 import Films from "./containers/Films/Films";
 import Login from "./containers/Login/Login";
+import Signup from "./components/Signup/Signup";
 import './App.css'
 
 
@@ -20,8 +21,11 @@ function App() {
         <Routes>
           <Route path="/" element={<Home/>}/>          
           <Route path="/aboutus" element={<AboutUs />}/>
-          <Route path="/films" element={<Films />}/>        
-          <Route path="/login" element={<Login />}/>        
+          <Route path="/films" element={<Films />}/> 
+          <Route path="/signup" element={<Signup />}/>     
+          <Route path="/login" element={<Login />}/>     
+              
+
         </Routes>
         <Footer />
       </BrowserRouter>
