@@ -5,8 +5,8 @@ import Footer from './components/Footer/Footer'
 import AboutUs from './containers/AboutUs/AboutUs'
 import Home from "./containers/Home/Home";
 import Films from "./containers/Films/Films";
-import Login from "./containers/Login/Login";
-import Signup from "./components/Signup/Signup";
+import Login from "./containers/User/Login/Login";
+import Signup from "./containers/User/Signup/Signup";
 import './App.css'
 
 
