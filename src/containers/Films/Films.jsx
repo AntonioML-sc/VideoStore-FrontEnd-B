@@ -75,7 +75,7 @@ const Films = props => {
     }
 
     return (
-        <div className="cont">
+        <div className="filmsCont">
             <div className="searchBar">
                 <button className="showSearchScreenButton" onClick={showSearchScreen}>Genres</button>
                 <form className="searchBarForm">
