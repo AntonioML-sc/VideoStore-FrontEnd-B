@@ -1,18 +1,34 @@
 import React from "react";
 import { logout } from "../userSlice";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { userData } from "../userSlice";
+import { useNavigate } from "react-router-dom";
+import "./Profile.css"
 
 const Profile = props => {
     const dispatch = useDispatch();
+    const datos = useSelector(userData);
+    let navigate = useNavigate();
+
+    const getout = () => {
+        dispatch(logout(datos));
+        navigate("/")
+    }
 
     return (
         <div className="log">
-
-            <button onClick={()=>dispatch(logout())}>Log out</button>
+            <div>
+                Information: <br />
+                Name: {datos.user.name},<br />
+                E-mail: {datos.user.email},<br />
+                Address: {datos.user.address}, <br />
+                Phone: {datos.user.phone}, <br />
+                Degister date: {datos.user.createdAt}
+            </div>
+            <button onClick={getout}>Log out</button>
 
         </div>
     )
-
 
 }
 

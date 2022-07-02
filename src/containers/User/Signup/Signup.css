@@ -1,6 +1,7 @@
 
 #signupWall{
-    background-color: black;
+    background: linear-gradient(black 20%, rgb(17, 0, 0),rgb(48, 0, 0),rgb(59, 0, 0),rgb(116, 0, 0),rgb(59, 0, 0), rgb(48, 0, 0),rgb(17, 0, 0),black 80%);
+
    
 
     display: flex;
@@ -11,8 +12,8 @@
     box-sizing: border-box;
 
     color: white;
-
-    height: 30em;
+    width: 100vw;
+  height: 78vh;
 
    
 }

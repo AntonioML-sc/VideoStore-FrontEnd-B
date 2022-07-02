@@ -1,7 +1,12 @@
-body{
-    background-color: black;
-}
 
 .log{
-    background-color: black;
+    width: 100vw;
+    height: 78vh;
+    background: linear-gradient(black 20%, rgb(17, 0, 0),rgb(48, 0, 0),rgb(59, 0, 0),rgb(116, 0, 0),rgb(59, 0, 0), rgb(48, 0, 0),rgb(17, 0, 0),black 80%);
+    display: flex;
+    justify-content: center;
+    color: white;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
 }

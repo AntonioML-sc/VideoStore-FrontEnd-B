@@ -22,7 +22,7 @@ const Login = props => {
 
     useEffect(() => {
         if (credenciales?.token !== '') {
-            navigate('/');
+            navigate('/login');
         };
     },[]);
 
@@ -54,16 +54,18 @@ const Login = props => {
         },1000)
 
     };
+ 
+
+        return (
+            <div className="cont">
+                    <label className="tittle">Email:</label>
+                    <input type="email" name="email" onChange={updateCredentials}  />
+                    <label className="tittle">Password:</label>
+                    <input type="password"   name="password" onChange={updateCredentials} />
+                    <input type="submit" value="Login" onClick={() => nosLogea()}  />
+            </div>
+        )
     
-    return (
-        <div className="cont">
-                <label className="tittle">Email:</label>
-                <input type="email" name="email" onChange={updateCredentials}  />
-                <label className="tittle">Password:</label>
-                <input type="password"   name="password" onChange={updateCredentials} />
-                <input type="submit" value="Login" onClick={() => nosLogea()}  />
-        </div>
-    )
 }
 
 export default Login
