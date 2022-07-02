@@ -39,6 +39,7 @@ export const loginUser = (body) => async (dispatch) => {
     }
 };
 
+
 export const { login, logout } = userSlice.actions;
 
 export const userData = (state) => state.user;
