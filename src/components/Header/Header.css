@@ -10,7 +10,8 @@
 
     color: white;
 
-    height: 6vh;
+    height: 7vh;
+    width: 100vw;
 
    
 
@@ -42,6 +43,11 @@
     text-decoration: none;
     color: red;
     font-weight: 500;
+}
+.logo1{
+    margin-top: 0.8em;
+    height: 9em;
+    width: 13em;
 }
 
 

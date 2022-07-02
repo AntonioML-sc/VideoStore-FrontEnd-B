@@ -3,6 +3,7 @@ import "./Header.css"
 import { NavLink } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { userData } from "../../containers/User/userSlice";
+import logo from "../../assets/Logo/logo.png"
 
 
 const Header = () => {
@@ -13,8 +14,8 @@ const Header = () => {
         return (
             <div id="Headerwall">
     
-                <div className="headeritems">
-                    <a className="headerlinks" href="http://"><img src="" alt="LOGO" /></a>
+                <div>
+                    <img className="logo1" src={logo} alt="" />
                 </div>
                 <div className="headeritems">
                     <div className="item"><NavLink to="/">Home</NavLink></div>
@@ -35,7 +36,7 @@ const Header = () => {
             <div id="Headerwall">
     
                 <div className="headeritems">
-                    <a className="headerlinks" href="http://"><img src="" alt="LOGO" /></a>
+                   <img src={logo} alt="LOGO" />
                 </div>
                 <div className="headeritems">
                     <div className="item"><NavLink to="/">Home</NavLink></div>
