@@ -5,8 +5,7 @@ const FilmCard = props => {
     console.log(props)
     return (
         <div className="FilmCard">
-            <h3>{props.data.title}</h3>
-
+            <img className='FilmCardImg' src={props.data.image} alt={props.data.title} />
         </div>
     )
 }

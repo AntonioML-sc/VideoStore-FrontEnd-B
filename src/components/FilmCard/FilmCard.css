@@ -1,11 +1,18 @@
 .FilmCard {
     padding: 10px;
-    margin: 2px;
+    margin: 3px;
     background-color: black;
     color: white;
     font-size: 10px;
     border-radius: 5px;
     border: .1em solid white;
-    height: 220px;
-    width: 120px;
+    height: 230px;
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+}
+
+.FilmCardImg {
+    height: 100%;
+    width: 100%;
 }
