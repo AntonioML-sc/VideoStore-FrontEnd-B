@@ -12,3 +12,29 @@
     align-items: center;
     justify-content: center;
 }
+.error{
+    color: rgb(255, 255, 0);
+}
+
+.boxItem {
+    border-color: red;
+    color: white;
+    background-color: black;
+    border-radius: 1em;
+    width: 16em;
+    height: 1.7em;
+}
+
+.boton {
+    margin-top: 0.4em;
+    height: 2em;
+    width: 6em;
+    border-radius: 1em;
+    background-color: red;
+    border-color: black;
+    color: white;
+}
+.boton:hover {
+    background-color: rgb(163, 24, 24);
+    border-color: whitesmoke;
+}

@@ -33,8 +33,7 @@ const Login = props => {
         }
 
         if (credentials.password.length > 4) {
-            if (! /[\d()+-]/g.test(credentials.password)) {
-
+            if ( /^(?=.[a-z])(?=.[A-Z])(?=.[0-9])(?=.[!@#$%^&*+-_=?/])(?=.{8,})/.test(credentials.password)) {
                 setMsgError('Password incorrecto');
                 return;
             }
@@ -59,10 +58,11 @@ const Login = props => {
         return (
             <div className="cont">
                     <label className="tittle">Email:</label>
-                    <input type="email" name="email" onChange={updateCredentials}  />
+                    <input  className="boxItem" type="email" name="email" onChange={updateCredentials}  />
                     <label className="tittle">Password:</label>
-                    <input type="password"   name="password" onChange={updateCredentials} />
-                    <input type="submit" value="Login" onClick={() => nosLogea()}  />
+                    <input  className="boxItem" type="password"   name="password" onChange={updateCredentials} />
+                    <input className="boton" type="submit" value="Login" onClick={() => nosLogea()}  />
+                    <div className="error">{msgError}</div>
             </div>
         )
     
