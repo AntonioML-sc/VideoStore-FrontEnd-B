@@ -7,6 +7,7 @@ import Home from "./containers/Home/Home";
 import Films from "./containers/Films/Films";
 import Login from "./containers/User/Login/Login";
 import Signup from "./containers/User/Signup/Signup";
+import Profile from "./containers/User/Profile/Profile";
 import './App.css'
 
 
@@ -24,8 +25,7 @@ function App() {
           <Route path="/films" element={<Films />}/> 
           <Route path="/signup" element={<Signup />}/>     
           <Route path="/login" element={<Login />}/>     
-              
-
+          <Route path="/profile" element={<Profile />}/>
         </Routes>
         <Footer />
       </BrowserRouter>

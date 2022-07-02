@@ -57,7 +57,6 @@ const Login = props => {
     
     return (
         <div className="cont">
-             <pre>{JSON.stringify(credentials, null,2)}</pre>
                 <label className="tittle">Email:</label>
                 <input type="email" name="email" onChange={updateCredentials}  />
                 <label className="tittle">Password:</label>
