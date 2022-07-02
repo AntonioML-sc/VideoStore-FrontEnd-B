@@ -4,8 +4,8 @@
     align-items: center;
     justify-content: center;
     background-color: black;
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
     position: relative;
 }
 
@@ -19,11 +19,11 @@
     align-items: center;
     justify-content: center;
     height: 6%;
-    width: 100vw;
+    width: 100%;
 }
 
 .filmsList {
-    background-color: blue;
+    background: linear-gradient(rgb(150, 1, 1), rgb(36, 0, 0), rgb(36, 0, 0), rgb(150, 1, 1));
     text-align: center;
     font-size: 3em;
     font-style: italic;
