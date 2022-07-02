@@ -3,7 +3,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: yellow;
     min-height: 78vh;
     height: auto;
     width: 100vw;
@@ -24,7 +23,7 @@
 }
 
 .filmsList {
-    background: linear-gradient(rgb(150, 1, 1), rgb(36, 0, 0), rgb(36, 0, 0), rgb(150, 1, 1));
+    background: linear-gradient(black 20%, rgb(17, 0, 0),rgb(48, 0, 0),rgb(59, 0, 0),rgb(116, 0, 0),rgb(59, 0, 0), rgb(48, 0, 0),rgb(17, 0, 0),black 80%);
     text-align: center;
     font-size: 3em;
     font-style: italic;
@@ -36,7 +35,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
 }
 
 .searchBarForm {    
