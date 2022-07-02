@@ -3,12 +3,15 @@ import { useState, useEffect } from 'react'
 import "./Films.css"
 import axios from 'axios'
 import FilmCard from '../../components/FilmCard/FilmCard'
+import FilmDetailedCard from "../../components/FilmDetailedCard/FilmDetailedCard"
 
 const Films = props => {
     let [data, setData] = useState({
         films: [],
         search: "",
-        searchType: ""
+        searchType: "",
+        showDetails: false,
+        filmDetails: ""
     })
 
     useEffect(() => {
@@ -74,8 +77,47 @@ const Films = props => {
         })
     }
 
-    return (
+    const showDetailedCard = (event, film) => {
+        setData({
+            ...data,
+            showDetails: true,
+            filmDetails: film
+        })
+    }
+
+    const hideDetailedCard = (event) => {
+        setData({
+            ...data,
+            showDetails: false,
+            filmDetails: ""
+        })
+    }
+
+    const DetailedCard = () => {
+        if (data.showDetails) {
+            return(
+                <div className="DetailsScreen" onClick={hideDetailedCard}>
+                    <div className="rowEmpty1"></div>
+                    <div className="rowCard">
+                        <div className="colEmpty"></div>
+                        <div className="colCard" onClick={hideDetailedCard}>
+                            <FilmDetailedCard data={data.filmDetails} />
+                        </div>
+                        <div className="colEmpty"></div>
+                    </div>
+                    <div className="rowEmpty2"></div>
+                </div>
+            )
+        } else {
+            return (
+                <div></div>
+            )
+        }
+    }
+
+    return (        
         <div className="filmsCont">
+            <DetailedCard/>
             <div className="searchBar">
                 <button className="showSearchScreenButton" onClick={showSearchScreen}>Genres</button>
                 <form className="searchBarForm">
@@ -107,8 +149,10 @@ const Films = props => {
             </div>
             <div className="filmsList">
                 {
-                    data.films.map((film) => (
-                        <FilmCard data={film} key={film.id} />
+                    data.films.map((film, index) => (                        
+                        <div key={index} onClick={(event) => showDetailedCard(event, film)} >
+                            <FilmCard data={film} />
+                        </div>
                     ))
                 }
             </div>
