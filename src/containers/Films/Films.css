@@ -1,11 +1,12 @@
-.cont {
+.filmsCont {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: black;
-    height: 100%;
-    width: 100%;
+    background-color: yellow;
+    min-height: 78vh;
+    height: auto;
+    width: 100vw;
     position: relative;
 }
 
@@ -18,8 +19,8 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    height: 6%;
-    width: 100%;
+    height: 5vh;
+    width: 100vw;
 }
 
 .filmsList {
@@ -28,8 +29,8 @@
     font-size: 3em;
     font-style: italic;
     color: white;
-    min-height: 94%;
-    height: fit-content;
+    min-height: 73vh;
+    height: auto;
     width: 100vw;
     display: flex;
     flex-direction: row;

@@ -5,7 +5,7 @@ const AboutUs = props => {
 
 
     return (
-        <div className="cont">
+        <div className="AboutUsCont">
             <div className="tittleAbout">About Us</div>
             <div className="textAbout">
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit.<br /> Odit commodi facilis doloribus iste non, <br />
