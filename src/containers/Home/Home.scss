@@ -1,0 +1,30 @@
+#Homewall{
+    width: 100vw;
+    height: 78vh;
+
+    .homewalljumbotron{
+        background-image: url(../../assets/HomePageImg/main.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        p {
+            font-size: 2em;
+            color: red;
+            font-weight: bolder;
+            font-style: italic;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            background-color: rgba(12, 12, 12, 0.461);
+            padding: 0.3em;
+        }
+    }
+}
+
+
+

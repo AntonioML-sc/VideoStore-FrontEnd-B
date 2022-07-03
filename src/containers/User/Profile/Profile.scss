@@ -1,0 +1,68 @@
+
+.profileWall{
+    width: 100vw;
+    height: 78vh;
+    background: linear-gradient(black 20%, rgb(17, 0, 0),rgb(48, 0, 0),rgb(59, 0, 0),rgb(116, 0, 0),rgb(59, 0, 0), rgb(48, 0, 0),rgb(17, 0, 0),black 80%);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    #profileCard{
+        background-color: black;
+        border-radius: 1em;
+        padding: 1em;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        border: 0.2em solid red;
+
+        #profilePhoto{
+            height: 10em;
+            width: 10em;
+            background-color: grey;
+            padding: 1em;
+            border-radius: 50%;
+        }
+
+        #profileInfo{
+            background-color: rgba(255, 0, 0, 0.123);
+            padding: 1em;
+            margin: 1em;
+
+            border-radius: 3em;
+
+            .profileItem{
+                margin: 1em;
+
+                #profileItemName{
+                    border-bottom: 0.2em solid red ;
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+    #logoutButton{
+        margin: 2em;
+        padding: 1em;
+        border-radius: 1em;
+        background-color: red;
+        color: black;
+        border: 0.1em solid red;
+        font-weight: bolder;
+    }
+
+    #logoutButton:hover{
+        margin: 2em;
+        padding: 1em;
+        border-radius: 1em;
+        background-color: black;
+        color: red;
+        border: 0.1em solid red;
+        font-weight: bolder;
+        cursor: pointer;
+    }
+}

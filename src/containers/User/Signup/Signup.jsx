@@ -82,35 +82,35 @@ const Signup = props => {
 
                 <div className="signupitem">
                     <label className="labelitems">
-                        Name:
+                        Name
                     </label>
                     <input onChange={handleInput} className="inputitem" type="text" name="name" />
                 </div>
 
                 <div className="signupitem">
                     <label className="labelitems">
-                        Email:
+                        Email
                     </label>
                     <input onChange={handleInput} className="inputitem" type="text" name="email" />
                 </div>
 
                 <div className="signupitem">
                     <label className="labelitems">
-                        Password:
+                        Password
                     </label>
                     <input onChange={handleInput} className="inputitem" type="password" name="password" />
                 </div>
 
                 <div className="signupitem">
                     <label className="labelitems">
-                        Phone:
+                        Phone
                     </label>
                     <input onChange={handleInput} className="inputitem" type="text" name="phone" />
                 </div>
 
                 <div className="signupitem">
                     <label className="labelitems">
-                        Address:
+                        Address
                     </label>
                     <input onChange={handleInput} className="inputitem" type="text" name="address" />
                 </div>

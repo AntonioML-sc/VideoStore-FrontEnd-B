@@ -6,18 +6,32 @@ const AboutUs = props => {
 
 
     return (
-        <Container className="AboutUsCont">
-            <div className="tittleAbout">About Us</div>
-            <div className="textAbout">
-                We are students of the GeeksHubs Fullstack Developer bootcamp.
-                This is our first project using React, Sass, and Redux.<br />
-                You can visit our profile at:<br />
-                 <a href="https://github.com/AntonioML-sc">Antonio's GitHub</a>  <br />
-                 <a href="https://github.com/99jack99">Jackson's GitHub</a> <br />
-                 <a href="https://github.com/jcarlos2n">José Carlos's GitHub</a>
+        <div className="AboutUsWall">
 
+            <div id="aboutText">
+                <h4>We apreciate you came here!</h4> 
+                <p>This proyect from Geekshubs was done with React.JS, and Redux. We have joined
+                    our back-end previously done, with what you can see now, our front-end.
+                </p>
             </div>
-        </Container>
+
+            <h4 id="githubsProfiles">Check out our Githubs!</h4>
+            
+            <div id="aboutProfiles">
+                
+                <div className="aboutProfilesItem">
+                <a className="aboutProfilesItemLinks" href="https://github.com/AntonioML-sc">Antonio</a>
+                </div>
+
+                <div className="aboutProfilesItem">
+                <a className="aboutProfilesItemLinks" href="https://github.com/99jack99">Jackson</a>
+                </div>
+
+                <div className="aboutProfilesItem">
+                <a className="aboutProfilesItemLinks" href="https://github.com/jcarlos2n">José Carlos</a>
+                </div>
+            </div>
+        </div>
     )
 }
 
