@@ -1,4 +1,4 @@
-#Headerwall{
+.Headerwall{
     background-color: black;
 
     display: flex;
@@ -12,6 +12,7 @@
 
     height: 8vh;
     width: 100vw;
+    min-width: 15vh;
 
    
 
@@ -28,8 +29,6 @@
 }
 
 .item{
-   /*  background-color: green; */
-
     margin: 1em;
 }
 
@@ -45,7 +44,7 @@
     font-weight: 500;
 }
 .logo1{
-    margin-top: 0.8em;
+    margin-top: 1.8em;
     height: 9em;
     width: 13em;
 }
