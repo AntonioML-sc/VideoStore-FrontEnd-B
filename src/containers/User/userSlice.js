@@ -58,7 +58,7 @@ export const signupUser = (email, password, name, phone, address) => async (disp
         })
 
         let response = user
-        if(response.status === 200){
+        if(response.status === 200 || response.status === 201 ){
             dispatch(signup(response.data))
         } 
     } catch (error) {
