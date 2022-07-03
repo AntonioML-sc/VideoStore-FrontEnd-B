@@ -9,7 +9,6 @@ const AboutUs = props => {
         <Container className="AboutUsCont">
             <div className="tittleAbout">About Us</div>
             <div className="textAbout">
-                About Us<br />
                 We are students of the GeeksHubs Fullstack Developer bootcamp.
                 This is our first project using React, Sass, and Redux.<br />
                 You can visit our profile at:<br />
