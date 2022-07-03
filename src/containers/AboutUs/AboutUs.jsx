@@ -15,7 +15,7 @@ const AboutUs = props => {
                 You can visit our profile at:<br />
                  <a href="https://github.com/AntonioML-sc">Antonio's GitHub</a>  <br />
                  <a href="https://github.com/99jack99">Jackson's GitHub</a> <br />
-                 <a href="https://github.com/jcarlos2n">Jose Carlos's GitHub</a>
+                 <a href="https://github.com/jcarlos2n">José Carlos's GitHub</a>
 
             </div>
         </Container>
