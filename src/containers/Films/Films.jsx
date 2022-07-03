@@ -1,6 +1,6 @@
 import React from "react"
 import { useState, useEffect } from 'react'
-import "./Films.css"
+import "./Films.scss"
 import axios from 'axios'
 import FilmCard from '../../components/FilmCard/FilmCard'
 import FilmDetailedCard from "../../components/FilmDetailedCard/FilmDetailedCard"
@@ -120,11 +120,8 @@ const Films = props => {
             <DetailedCard/>
             <div className="searchBar">
                 <button className="showSearchScreenButton" onClick={showSearchScreen}>Genres</button>
-                <form className="searchBarForm">
-                    <div>
-                        <label>Search by title: </label>
-                        <input type="text" onChange={handleChange} name="search" />
-                    </div>
+                <form className="searchBarForm">                    
+                        <input className="inputBox" type="text" onChange={handleChange} name="search" placeholder=" Search"/>                    
                 </form>
             </div>
             <div className="searchByGenreScreen" onClick={hideSearchScreen}>
