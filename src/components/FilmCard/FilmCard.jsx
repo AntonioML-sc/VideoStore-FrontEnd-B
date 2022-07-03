@@ -1,5 +1,5 @@
 import React from 'react'
-import './FilmCard.css'
+import './FilmCard.scss'
 
 const FilmCard = props => {
 
