@@ -1,0 +1,40 @@
+.FilmDetailedCard {
+    background-color: black;
+    color: white;
+    border: none;
+    display: flex;
+    flex-direction: row;
+
+    .cardImg {
+        object-fit: contain;
+        padding: 5px;
+        max-width: 30vw;
+        width: auto;
+        height: auto;
+        align-self: flex-start;
+    }
+
+    .cardParaph {
+        display: flex;
+        flex-direction: column;
+        max-width: 30vw;
+        padding-left: 10px;
+
+        .cardText {
+            padding: 5px;
+        }
+
+        .title {
+            font-weight: bold;
+            font-size: large;
+        }
+
+        .fieldName {
+            font-weight: bold;
+        }
+
+        .synopsis {
+            font-style: italic;
+        }
+    }
+}
