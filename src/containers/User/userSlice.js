@@ -25,7 +25,14 @@ export const userSlice = createSlice({
             return {
                 ...state,
                 isRegister: true,
-                successMessage: 'You have been sign succesfully'
+                successMessage: 'You have been signed succesfully'
+            }
+        },
+        logError: (state, action) => {
+            return {
+                ...state,
+                isError: !action.payload.success,
+                errorMessage: action.payload.message
             }
         },
     }
@@ -67,7 +74,7 @@ export const signupUser = (email, password, name, phone, address) => async (disp
 }
 
 
-export const { login, logout, signup } = userSlice.actions;
+export const { login, logout, signup, logError } = userSlice.actions;
 
 export const userData = (state) => state.user;
 

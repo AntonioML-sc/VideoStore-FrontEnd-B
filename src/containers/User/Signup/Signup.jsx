@@ -40,7 +40,7 @@ const Signup = props => {
             setSignup({
                 ...signup,
                 isError: true,
-                message: 'Introduce un e-mail válido'
+                message: 'Reenter a valid e-mail'
             });
             return;
         }
@@ -50,7 +50,7 @@ const Signup = props => {
                 setSignup({
                     ...signup,
                     isError: true,
-                    message: 'Introduce un password válido'
+                    message: 'Unvalid password'
                 });
                 return;
             };
@@ -59,7 +59,7 @@ const Signup = props => {
             setSignup({
                 ...signup,
                 isError: true,
-                message: 'El password debe de tener como mínimo 4 caracteres'
+                message: 'Password must have minimun 4 characters'
             });
             return;
         }
@@ -78,7 +78,7 @@ const Signup = props => {
 
         <div  id="signupWall">
 
-            <form  >
+            <form>
 
                 <div className="signupitem">
                     <label className="labelitems">
@@ -116,10 +116,13 @@ const Signup = props => {
                 </div>
 
                 <div className="signupitem">
-                    <input className=" submitSignupItem" onSubmit={userSignup} type="submit" value="SIGN" />
+                    <input onSubmit={userSignup} className=" submitSignupItem" type="submit" value="SIGN" />
                 </div>
 
             </form>
+
+            <p>{signup.isError ? signup.message : ''}</p>
+            <p>{userinfo.isError ? userinfo.errorMessage : userinfo.successMessage}</p>
 
             <div className="offerCard">
                     <h1>Recently Added!</h1>
