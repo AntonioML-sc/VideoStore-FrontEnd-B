@@ -1,5 +1,5 @@
 import react from "react";
-import "./Home.css"
+import "./Home.scss"
 
 
 const Home = (props) =>{
@@ -7,7 +7,7 @@ const Home = (props) =>{
     return(
         <div id="Homewall">
             <div className="homewalljumbotron">
-                <p>"Literally, on fire..."</p>
+                <p>"Where your dreams become reality"</p>
              
             </div>
         </div>
