@@ -6,10 +6,10 @@ import { useNavigate } from "react-router-dom";
 import "./Profile.scss"
 
 const Profile = props => {
+ 
     const dispatch = useDispatch();
     const datos = useSelector(userData);
     let navigate = useNavigate();
-
     const getout = () => {
         dispatch(logout());
         navigate("/")
