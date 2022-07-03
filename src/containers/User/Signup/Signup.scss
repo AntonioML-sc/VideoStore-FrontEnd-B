@@ -1,0 +1,84 @@
+#signupWall {
+    background: linear-gradient(black 20%, rgb(17, 0, 0), rgb(48, 0, 0), rgb(59, 0, 0), rgb(116, 0, 0), rgb(59, 0, 0), rgb(48, 0, 0), rgb(17, 0, 0), black 80%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    color: white;
+    width: 100vw;
+    height: 78vh;
+
+    .signupitem {
+        padding: 0.3em;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        .labelitems {
+            margin: 0 2em 0.2em 2em;
+        }
+
+        .inputitem {
+            background-color: black;
+            color: red;
+            padding: 0.4em;
+            border: 0.1em solid red;
+            transition: 0.3s;
+            border-radius: 2em;
+        }
+
+        .inputitem:hover {
+            background-color: red;
+            color: black;
+            padding: 0.4em;
+            border: 0.1em solid black;
+            transition: 0.3s;
+            border-radius: 2em;
+        }
+
+
+        .submitSignupItem {
+            padding-inline: 2em;
+            padding-block: 0.5em;
+            color: white;
+            background-color: red;
+            border-radius: 1em;
+            transition: 0.3s;
+        }
+
+        .submitSignupItem:hover {
+            padding-inline: 2em;
+            padding-block: 0.5em;
+            color: red;
+            background-color: black;
+            border-radius: 1em;
+            transition: 0.3s;
+            cursor: pointer;
+            
+        }
+
+        
+
+    }
+
+    .offerCard{
+        margin-top: 2em;
+        padding: 1em;
+        background-color: red;
+        width: 20em;
+        border-radius: 0.1em;
+
+        h1{
+            color: black;
+        }
+
+        p{
+            font-size: 1.2em;
+            font-weight: bolder;
+        }
+    }
+
+    
+}

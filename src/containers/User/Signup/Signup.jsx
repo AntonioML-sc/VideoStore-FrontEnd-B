@@ -3,7 +3,7 @@ import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from 'react-redux'
 import { signupUser, userData } from '../userSlice'
 import { useNavigate } from 'react-router-dom'
-import "./Signup.css";
+import "./Signup.scss";
 
 const Signup = props => {
     const dispatch = useDispatch()
@@ -76,48 +76,57 @@ const Signup = props => {
 
     return (
 
-        <form id="signupWall"  >
+        <div  id="signupWall">
 
-            <div className="signupitem">
-                <label className="labelitems">
-                    Name:
-                </label>
-                <input onChange={handleInput} className="inputitem" type="text" name="name" />
+            <form  >
+
+                <div className="signupitem">
+                    <label className="labelitems">
+                        Name:
+                    </label>
+                    <input onChange={handleInput} className="inputitem" type="text" name="name" />
+                </div>
+
+                <div className="signupitem">
+                    <label className="labelitems">
+                        Email:
+                    </label>
+                    <input onChange={handleInput} className="inputitem" type="text" name="email" />
+                </div>
+
+                <div className="signupitem">
+                    <label className="labelitems">
+                        Password:
+                    </label>
+                    <input onChange={handleInput} className="inputitem" type="password" name="password" />
+                </div>
+
+                <div className="signupitem">
+                    <label className="labelitems">
+                        Phone:
+                    </label>
+                    <input onChange={handleInput} className="inputitem" type="text" name="phone" />
+                </div>
+
+                <div className="signupitem">
+                    <label className="labelitems">
+                        Address:
+                    </label>
+                    <input onChange={handleInput} className="inputitem" type="text" name="address" />
+                </div>
+
+                <div className="signupitem">
+                    <input className=" submitSignupItem" onSubmit={userSignup} type="submit" value="SIGN" />
+                </div>
+
+            </form>
+
+            <div className="offerCard">
+                    <h1>Recently Added!</h1>
+                    <p>You can watch 100 h for free by just Signing up!</p>
             </div>
 
-            <div className="signupitem">
-                <label className="labelitems">
-                    Email:
-                </label>
-                <input onChange={handleInput} className="inputitem" type="text" name="email" />
-            </div>
-
-            <div className="signupitem">
-                <label className="labelitems">
-                    Password:
-                </label>
-                <input onChange={handleInput} className="inputitem" type="password" name="password" />
-            </div>
-
-            <div className="signupitem">
-                <label className="labelitems">
-                    Phone:
-                </label>
-                <input onChange={handleInput} className="inputitem" type="text" name="phone" />
-            </div>
-
-            <div className="signupitem">
-                <label className="labelitems">
-                    Address:
-                </label>
-                <input onChange={handleInput} className="inputitem" type="text" name="address" />
-            </div>
-
-            <div className="signupitem submitSignupItem">
-                <input onSubmit={userSignup} type="submit" value="Accept" />
-            </div>
-
-        </form>
+        </div>
     )
 }
 
