@@ -1,18 +1,24 @@
 import React from "react";
-import "./AboutUs.css"
+import "./AboutUs.scss"
+import Container from 'react-bootstrap/Container';
 
 const AboutUs = props => {
 
 
     return (
-        <div className="AboutUsCont">
+        <Container className="AboutUsCont">
             <div className="tittleAbout">About Us</div>
             <div className="textAbout">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit.<br /> Odit commodi facilis doloribus iste non, <br />
-                minima iusto ipsa id voluptatibus debitis. Eveniet <br />
-                quaerat numquam reprehenderit provident eaque rem tempora repudiandae hic.
+                About Us<br />
+                We are students of the GeeksHubs Fullstack Developer bootcamp.
+                This is our first project using React, Sass, and Redux.<br />
+                You can visit our profile at:<br />
+                 <a href="https://github.com/AntonioML-sc">Antonio's GitHub</a>  <br />
+                 <a href="https://github.com/99jack99">Jackson's GitHub</a> <br />
+                 <a href="https://github.com/jcarlos2n">Jose Carlos's GitHub</a>
+
             </div>
-        </div>
+        </Container>
     )
 }
 

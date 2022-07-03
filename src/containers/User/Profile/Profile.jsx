@@ -11,7 +11,7 @@ const Profile = props => {
     let navigate = useNavigate();
 
     const getout = () => {
-        dispatch(logout(datos));
+        dispatch(logout());
         navigate("/")
     }
 
@@ -23,7 +23,7 @@ const Profile = props => {
                 E-mail: {datos.user.email},<br />
                 Address: {datos.user.address}, <br />
                 Phone: {datos.user.phone}, <br />
-                Degister date: {datos.user.createdAt}
+                Register date: {datos.user.createdAt}
             </div>
             <button onClick={getout}>Log out</button>
 
