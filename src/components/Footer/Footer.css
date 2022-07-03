@@ -1,5 +1,6 @@
 .footer {
-    height: 15vh;
+    height: 14vh;
+    max-height: 25vh;
     background-color: black;
     display: flex;
     flex-direction: row;
@@ -16,10 +17,12 @@
     display: flex;
     align-items: flex-start;
     justify-content: space-around;
-    height: 5.4em;
+    height: 4.4em;
+    min-height: 2em;
 }
 .footLeft{
     text-align: center;
+    min-width: 8em;
 }
 .footRight {
     text-align: center;
