@@ -11,7 +11,9 @@ const Films = props => {
         search: "",
         searchType: "",
         showDetails: false,
-        filmDetails: ""
+        filmDetails: "",
+        searching: false,
+        myInterval: 0
     })
 
     useEffect(() => {
@@ -20,28 +22,40 @@ const Films = props => {
                 if (data.search == "") {
                     await axios.get('https://aml-mysql-28-06-22-videostore.herokuapp.com/films')
                         .then(resp => {
-                            // console.log(resp.data);
                             setData({
                                 ...data,
                                 films: resp.data
+                            });
+                        }).catch((error) => {
+                            setData({
+                                ...data,
+                                films: []
                             });
                         })
                 } else if (data.searchType == "title") {
                     await axios.get(`https://aml-mysql-28-06-22-videostore.herokuapp.com/films/getByTitle/${data.search}`)
                         .then(resp => {
-                            // console.log(resp.data);
                             setData({
                                 ...data,
                                 films: resp.data
+                            });
+                        }).catch((error) => {
+                            setData({
+                                ...data,
+                                films: []
                             });
                         })
                 } else if (data.searchType == "genre") {
                     await axios.get(`https://aml-mysql-28-06-22-videostore.herokuapp.com/films/getByGenre/${data.search}`)
                         .then(resp => {
-                            // console.log(resp.data);
                             setData({
                                 ...data,
                                 films: resp.data
+                            });
+                        }).catch((error) => {
+                            setData({
+                                ...data,
+                                films: []
                             });
                         })
                 }
@@ -54,11 +68,26 @@ const Films = props => {
     }, [data.search])
 
     const handleChange = (event) => {
+
+        if (data.searching) {
+            clearInterval(data.myInterval)
+        }
+
         setData({
             ...data,
-            [event.target.name]: event.target.value,
-            searchType: "title"
+            searching: true,
+            myInterval: setTimeout(() => {
+                setData({
+                    ...data,
+                    [event.target.name]: event.target.value,
+                    searchType: "title",
+                    searching: false,
+                    myInterval: 0
+                })
+            }, 400)
         })
+
+        data.myInterval
     }
 
     const hideSearchScreen = () => {
@@ -95,7 +124,7 @@ const Films = props => {
 
     const DetailedCard = () => {
         if (data.showDetails) {
-            return(
+            return (
                 <div className="DetailsScreen" onClick={hideDetailedCard}>
                     <div className="rowEmpty1"></div>
                     <div className="rowCard">
@@ -115,13 +144,27 @@ const Films = props => {
         }
     }
 
-    return (        
+    const FilmsList = () => {
+        if (data.films.length > 0) {
+            return (
+                data.films.map((film, index) => (
+                    <div key={index} onClick={(event) => showDetailedCard(event, film)} >
+                        <FilmCard data={film} />
+                    </div>
+                ))
+            )
+        } else {
+            return (<div></div>)
+        }
+    }
+
+    return (
         <div className="filmsCont">
-            <DetailedCard/>
+            <DetailedCard />
             <div className="searchBar">
                 <button className="showSearchScreenButton" onClick={showSearchScreen}>Genres</button>
-                <form className="searchBarForm">                    
-                        <input className="inputBox" type="text" onChange={handleChange} name="search" placeholder=" Search"/>                    
+                <form className="searchBarForm">
+                    <input className="inputBox" type="text" onChange={handleChange} name="search" placeholder=" Search" />
                 </form>
             </div>
             <div className="searchByGenreScreen" onClick={hideSearchScreen}>
@@ -145,13 +188,7 @@ const Films = props => {
                 <div className="emptySpace"></div>
             </div>
             <div className="filmsList">
-                {
-                    data.films.map((film, index) => (                        
-                        <div key={index} onClick={(event) => showDetailedCard(event, film)} >
-                            <FilmCard data={film} />
-                        </div>
-                    ))
-                }
+                <FilmsList />
             </div>
         </div>
     )
