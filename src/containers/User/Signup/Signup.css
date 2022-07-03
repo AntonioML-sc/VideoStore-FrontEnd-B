@@ -46,6 +46,8 @@
     border: 0.1em solid red;
     
     transition: 1s;
+
+    border-radius: 2em;
 }
 
 
@@ -58,7 +60,7 @@
     border: 0.1em solid black;
 
     transition: 1s;
-
+    
     border-radius: 2em;
     
 }

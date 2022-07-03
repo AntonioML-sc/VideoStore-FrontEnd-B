@@ -20,7 +20,14 @@ export const userSlice = createSlice({
             return{
                 ...state.initialState
             }
-        }
+        },
+        signup: (state, action) => {
+            return {
+                ...state,
+                isRegister: true,
+                successMessage: 'You have been sign succesfully'
+            }
+        },
     }
 });
 
@@ -39,8 +46,28 @@ export const loginUser = (body) => async (dispatch) => {
     }
 };
 
+export const signupUser = (email, password, name, phone, address) => async (dispatch) => {
+    try {
+        const user = await axios.post('https://aml-mysql-28-06-22-videostore.herokuapp.com/users/register',
+        {
+            name: name,
+            password: password,
+            phone: phone,
+            email: email,
+            address: address
+        })
 
-export const { login, logout } = userSlice.actions;
+        let response = user
+        if(response.status === 200){
+            dispatch(signup(response.data))
+        } 
+    } catch (error) {
+        dispatch(logError(error))
+    }
+}
+
+
+export const { login, logout, signup } = userSlice.actions;
 
 export const userData = (state) => state.user;
 
