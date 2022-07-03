@@ -25,7 +25,7 @@ export const userSlice = createSlice({
             return {
                 ...state,
                 isRegister: true,
-                successMessage: 'You have been sign succesfully'
+                successMessage: 'You have been signed succesfully'
             }
         },
         logError: (state, action) => {
