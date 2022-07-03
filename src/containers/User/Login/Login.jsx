@@ -5,6 +5,8 @@ import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { loginUser, userData } from "../userSlice"
 
+import evalField from '../../../utils'
+
 const Login = props => {
 
     const [credentials, setCrendentials] = useState({ email: '', password: '' });
@@ -19,7 +21,6 @@ const Login = props => {
         setCrendentials({ ...credentials, [event.target.name]: event.target.value })
     }
 
-
     useEffect(() => {
         if (credenciales?.token !== '') {
             navigate('/login');
@@ -27,18 +28,19 @@ const Login = props => {
     }, []);
 
     const nosLogea = () => {
-        if (! /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/.test(credentials.email)) {
+
+        if (! evalField('email', credentials.email) ) {
             setMsgError('Reenter a valid email');
             return;
         }
 
-        if (credentials.password.length > 4) {
-            if (/^(?=.[a-z])(?=.[A-Z])(?=.[0-9])(?=.[!@#$%^&*+-_=?/])(?=.{8,})/.test(credentials.password)) {
-                setMsgError('Password is not correct');
+        if (credentials.password.length > 7) {            
+            if (! evalField('password', credentials.password) ) {
+                setMsgError('Password must contain a letter, a capital letter, a number and a special character');
                 return;
             }
         } else {
-            setMsgError('Password must have more than 4 characters');
+            setMsgError('Password must have more than 8 characters');
             return;
         }
 
@@ -51,9 +53,7 @@ const Login = props => {
         setTimeout(() => {
             navigate("/")
         }, 1000)
-
     };
-
 
     return (
         <div className="loginWall">
@@ -76,7 +76,6 @@ const Login = props => {
 
         </div>
     )
-
 }
 
 export default Login

@@ -73,5 +73,7 @@ const validate = (obj) => {
     return Object.entries(obj).reduce((acc, curVal) => {return (acc && (evalField(curVal[0], curVal[1])))}, true);
 }
 
-exports.evalField = evalField;
-exports.validate = validate;
+// exports.evalField = evalField;
+// exports.validate = validate;
+
+export default evalField
