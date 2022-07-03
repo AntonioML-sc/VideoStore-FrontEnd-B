@@ -3,7 +3,7 @@ import { logout } from "../userSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { userData } from "../userSlice";
 import { useNavigate } from "react-router-dom";
-import "./Profile.css"
+import "./Profile.scss"
 
 const Profile = props => {
     const dispatch = useDispatch();
@@ -16,16 +16,38 @@ const Profile = props => {
     }
 
     return (
-        <div className="log">
-            <div>
-                Information: <br />
-                Name: {datos.user.name},<br />
-                E-mail: {datos.user.email},<br />
-                Address: {datos.user.address}, <br />
-                Phone: {datos.user.phone}, <br />
-                Degister date: {datos.user.createdAt}
+        <div className="profileWall">
+
+            <div id="profileCard">
+                <div id="profilePhoto">
+
+                </div>
+
+                <div id="profileInfo">
+                    <div className="profileItem">
+                        <h3 id="profileItemName">{datos.user.name}</h3>
+                    </div>
+                    <div className="profileItem">
+                        <h3>{datos.user.email}</h3>
+                    </div>
+                    <div className="profileItem">
+                        <h3>{datos.user.address}</h3>
+                    </div>
+                    <div className="profileItem">
+                        <h3>{datos.user.phone}</h3>
+                    </div>
+                    <br></br>
+                    <div className="profileItem">
+                        <h3>Date of creation: {datos.user.createdAt}</h3>
+                    </div>
+
+                    
+                </div>
             </div>
-            <button onClick={getout}>Log out</button>
+           
+            <button id="logoutButton" onClick={getout}>
+                Log out
+            </button>
 
         </div>
     )
