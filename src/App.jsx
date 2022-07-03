@@ -1,4 +1,4 @@
-// import React,{ BrowserRouter, Route, Routes } from 'react'
+
 import { BrowserRouter, Route, Routes  } from "react-router-dom";
 import Header from "./components/Header/Header"
 import Footer from './components/Footer/Footer'
@@ -8,7 +8,7 @@ import Films from "./containers/Films/Films";
 import Login from "./containers/User/Login/Login";
 import Signup from "./containers/User/Signup/Signup";
 import Profile from "./containers/User/Profile/Profile";
-import './App.css'
+import './App.scss'
 
 
 
