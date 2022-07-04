@@ -55,12 +55,12 @@
             background-color: black;
             border-radius: 1em;
             transition: 0.3s;
-            cursor: pointer;
-            
+            cursor: pointer;            
         }
+    }
 
-        
-
+    .errorMessage {
+        color: yellow;
     }
 
     .offerCard{
