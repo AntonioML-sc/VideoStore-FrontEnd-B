@@ -1,7 +1,8 @@
 
 .profileWall{
     width: 100vw;
-    height: 78vh;
+    min-height: 78vh;
+    height: auto;
     background: linear-gradient(black 20%, rgb(17, 0, 0),rgb(48, 0, 0),rgb(59, 0, 0),rgb(116, 0, 0),rgb(59, 0, 0), rgb(48, 0, 0),rgb(17, 0, 0),black 80%);
     color: white;
     display: flex;
@@ -65,4 +66,10 @@
         font-weight: bolder;
         cursor: pointer;
     }
+}
+.userList{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
