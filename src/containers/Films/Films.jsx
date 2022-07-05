@@ -125,16 +125,16 @@ const Films = props => {
     const DetailedCard = () => {
         if (data.showDetails) {
             return (
-                <div className="DetailsScreen" onClick={hideDetailedCard}>
-                    <div className="rowEmpty1"></div>
+                <div className="DetailsScreen">
+                    <div className="rowEmpty1" onClick={hideDetailedCard}></div>
                     <div className="rowCard">
-                        <div className="colEmpty"></div>
-                        <div className="colCard" onClick={hideDetailedCard}>
+                        <div className="colEmpty" onClick={hideDetailedCard}></div>
+                        <div className="colCard">
                             <FilmDetailedCard data={data.filmDetails} />
                         </div>
-                        <div className="colEmpty"></div>
+                        <div className="colEmpty" onClick={hideDetailedCard}></div>
                     </div>
-                    <div className="rowEmpty2"></div>
+                    <div className="rowEmpty2" onClick={hideDetailedCard}></div>
                 </div>
             )
         } else {

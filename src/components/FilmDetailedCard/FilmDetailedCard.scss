@@ -5,14 +5,52 @@
     display: flex;
     flex-direction: row;
 
-    .cardImg {
-        object-fit: contain;
-        padding: 5px;
-        max-width: 30vw;
-        width: auto;
-        height: auto;
-        align-self: flex-start;
+    .cardImgColumn {
+        display: flex;
+        flex-direction: column;
+
+        .RentFilmForm {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            margin-bottom: 0.4em;
+
+            .dateInput {
+                padding: 0.4em;
+                border-color: red;
+                color: white;
+                background-color: black;
+                border-radius: 1em;
+                width: 12em;
+            }
+
+            .submitOrder {
+                padding: 0.5em;
+                width: 6em;
+                border-radius: 1em;
+                background-color: red;
+                color: white;
+                transition: 0.3s;
+            }
+
+            .submitOrder:hover {
+                background-color: black;
+                color: red;
+                transition: 0.3s;
+                cursor: pointer;
+            }
+        }
+
+        .cardImg {
+            object-fit: contain;
+            padding: 5px;
+            max-width: 30vw;
+            width: auto;
+            height: auto;
+            align-self: flex-start;
+        }
     }
+
 
     .cardParaph {
         display: flex;
