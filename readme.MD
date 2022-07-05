@@ -4,7 +4,7 @@
 <h1 align="center">🎞️​ Dreamfilm 🎞️​​</h1>
 
 <h1 align="center"></h1>
-<h3 align="center"><em style="color: #ba932f" >Created by: Jackson Almeida, Antonio Morales and Jose Carlos</em></h3>
+<h3 align="center"><em style="color: #ba932f" >Created by: Jackson Almeida, Antonio Morales and José Carlos Núñez</em></h3>
 <hr>
 
 <h2>🚩​​ Intro</h2>
