@@ -13,6 +13,10 @@ import evalField from '../../utils'
 const FilmDetailedCard = props => {
 
     let navigate = useNavigate()
+    
+    const goTo = (destination) => {
+        navigate(destination)
+    }
 
     const loggedUser = useSelector(userData);
 
@@ -77,7 +81,12 @@ const FilmDetailedCard = props => {
     const RentFilmForm = () => {
 
         if (!loggedUser?.user) {
-            return (<div></div>)
+            return (
+                <div className="RentFilmForm" >
+                    <button className="submitOrder" onClick={() => goTo("/login")} >Log In</button>
+                    <button className="submitOrder" onClick={() => goTo("/signup")} >Sign Up</button>
+                </div>
+            )
         } else {
             return (
                 <form className="RentFilmForm" onSubmit={rentFilm} >

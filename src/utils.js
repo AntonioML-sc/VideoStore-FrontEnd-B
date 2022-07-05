@@ -32,7 +32,7 @@ const evalAddress = (st) => {
 }
 
 const evalDate = (st) => {
-    return /^[\d]{4}[-]{1}[\d]{2}[-]{1}[\d]{2}[ ]{1}[\d]{2}[:]{1}[\d]{2}[:]{1}[\d]{2}$/.test(st);
+    return /^[\d]{4}[-]{1}[\d]{2}[-]{1}[\d]{2}$/.test(st);
 }
 
 const evalPassword = (st) => {
