@@ -1,5 +1,6 @@
 |  <img src="src/assets/Readme/technologies/react.png" width="150" height="150"/>  | <img src="src/assets/Readme/technologies/redux.png" width="250" height="150"/>    |  <img src="src/assets/Readme/technologies/sass.png" width="150" height="150"/>    |
 |:--:|:--:|:--:|
+|  <img src="src/assets/Readme/technologies/jwt.png" width="150" height="130"/>    |<img src="src/assets/Readme/technologies/react-router.png" width="150" height="120"/> |<img src="src/assets/Readme/technologies/axios.png" width="150" height="100"/> |
 
 <h1 align="center">🎞️​ Dreamfilm 🎞️​​</h1>
 
@@ -38,7 +39,7 @@
 |:-----:|:----:|:----:|
 | Home | <img src="src/assets/Readme/home.png" width="1000" height="200"/> |Main page, from here to can reach to any of ours services. |
 | Film | <img src="src/assets/Readme/film.png" width="1000" height="200"/> |Here is our library of all films we currently have. |
-| About us | <img src="src/assets/Readme/aboutus.png" width="1000" height="200"/> |About us page, all related to the proyect and us. |
+| About us | <img src="src/assets/Readme/aboutus.png" width="1000" height="200"/> |About us page, all related to the project and us. |
 | Sign up | <img src="src/assets/Readme/signup.png" width="1000" height="200"/> |Sign up form, to register in our app. |
 | Log in | <img src="src/assets/Readme/login.png" width="1000" height="200"/> |Log in form, to enter in our app.|
 | Profile | <img src="src/assets/Readme/profile.png" width="1000" height="200"/> |Profile page, You can visualize your information. If you are admin, you can also see others users informations. |
@@ -56,6 +57,8 @@
 - We wished that we added more into this project.
 <br>
 <sub><em>for example, being able to purchase any movie*</em></sub>
+<br>
+- Adding more calls to our endpoints should also be great.
 <br>
 
 
