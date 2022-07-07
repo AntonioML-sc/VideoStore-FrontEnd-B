@@ -5,17 +5,20 @@ import axios from 'axios'
 import FilmCard from '../../components/FilmCard/FilmCard'
 import FilmDetailedCard from "../../components/FilmDetailedCard/FilmDetailedCard"
 
-const Films = props => {
+const Films = () => {
     let [data, setData] = useState({
         films: [],
         search: "",
         searchType: "",
+        searching: false,
+        myInterval: 0,
         showDetails: false,
         filmDetails: "",
-        searching: false,
-        myInterval: 0
+        showGenres: false,
+        genres: ["action", "adventure", "animation", "biopic", "comedy", "crime", "drama", "fantasy", "horror", "romance", "sci-fi", "thriller"]
     })
 
+    // updates data.films to show when user changes search word in form or uses search menu
     useEffect(() => {
         async function fetchFilms() {
             try {
@@ -67,6 +70,7 @@ const Films = props => {
         fetchFilms()
     }, [data.search])
 
+    // manages changes in menu's form. Wait 0.4s until user stops writing to update data.search (and then data.films, rendering again)
     const handleChange = (event) => {
 
         if (data.searching) {
@@ -90,22 +94,73 @@ const Films = props => {
         data.myInterval
     }
 
-    const hideSearchScreen = () => {
-        document.getElementsByClassName("searchByGenreScreen")[0].style.display = "none";
-    }
-
+    // shows search by genre menu
     const showSearchScreen = () => {
-        document.getElementsByClassName("searchByGenreScreen")[0].style.display = "flex";
+        // document.getElementsByClassName("searchByGenreScreen")[0].style.display = "flex";
+        setData({
+            ...data,
+            showGenres: true
+        })
     }
 
+    const hideSearchScreen = () => {
+        // document.getElementsByClassName("searchByGenreScreen")[0].style.display = "flex";
+        setData({
+            ...data,
+            showGenres: false
+        })
+    }
+
+    // sets data.searchType and search so as to make useEffect hook search by genre. Hide search by genre menu.
     const setGenre = (event) => {
         setData({
             ...data,
             search: event.target.value,
-            searchType: "genre"
+            searchType: "genre",
+            showGenres: false
         })
     }
 
+    // sets the hook to its initial state
+    const clear = () => {
+        setData({
+            ...data,
+            search: "",
+            searchType: "",
+            searching: false,
+            myInterval: 0,
+            showDetails: false,
+            filmDetails: "",
+            showGenres: false
+        });
+    }
+
+    // renders the search by genre menu
+    const GenresMenu = () => {
+
+        if (data.showGenres) {
+            return (
+                <div className="searchByGenreScreen">
+                    <div className="searchByGenreMenu">
+                        <p className="genres">Genres:</p>
+                        <form className="sideBarSearch">
+                            <input className="genreButton" type="button" value="ALL" onClick={clear} name="search" />
+                            {
+                                data.genres.map((genre, index) => (
+                                    <input key={index} className="genreButton" type="button" value={genre} onClick={setGenre} name="search" />
+                                ))
+                            }                        
+                        </form>
+                    </div>
+                    <div className="emptySpace" onClick={hideSearchScreen}></div>
+                </div>
+            )
+        } else {
+            return (<div></div>)
+        }
+    }
+
+    // functions to set changes in hook to show / hide a detailed film card on click on the chosen film card
     const showDetailedCard = (event, film) => {
         setData({
             ...data,
@@ -122,6 +177,7 @@ const Films = props => {
         })
     }
 
+    // Renders film detailed card on demand
     const DetailedCard = () => {
         if (data.showDetails) {
             return (
@@ -144,6 +200,7 @@ const Films = props => {
         }
     }
 
+    // renders a film card per film stored in array data.films
     const FilmsList = () => {
         if (data.films.length > 0) {
             return (
@@ -158,6 +215,7 @@ const Films = props => {
         }
     }
 
+    // renders the container
     return (
         <div className="filmsCont">
             <DetailedCard />
@@ -167,26 +225,7 @@ const Films = props => {
                     <input className="inputBox" type="text" onChange={handleChange} name="search" placeholder=" Search" />
                 </form>
             </div>
-            <div className="searchByGenreScreen" onClick={hideSearchScreen}>
-                <div className="searchByGenreMenu">
-                    <p className="genres">Genres:</p>
-                    <form className="sideBarSearch">
-                        <input className="genreButton" type="button" value="action" onClick={setGenre} name="search" />
-                        <input className="genreButton" type="button" value="adventure" onClick={setGenre} name="search" />
-                        <input className="genreButton" type="button" value="animation" onClick={setGenre} name="search" />
-                        <input className="genreButton" type="button" value="biopic" onClick={setGenre} name="search" />
-                        <input className="genreButton" type="button" value="comedy" onClick={setGenre} name="search" />
-                        <input className="genreButton" type="button" value="crime" onClick={setGenre} name="search" />
-                        <input className="genreButton" type="button" value="drama" onClick={setGenre} name="search" />
-                        <input className="genreButton" type="button" value="fantasy" onClick={setGenre} name="search" />
-                        <input className="genreButton" type="button" value="horror" onClick={setGenre} name="search" />
-                        <input className="genreButton" type="button" value="romance" onClick={setGenre} name="search" />
-                        <input className="genreButton" type="button" value="sci-fi" onClick={setGenre} name="search" />
-                        <input className="genreButton" type="button" value="thriller" onClick={setGenre} name="search" />
-                    </form>
-                </div>
-                <div className="emptySpace"></div>
-            </div>
+            <GenresMenu />
             <div className="filmsList">
                 <FilmsList />
             </div>
