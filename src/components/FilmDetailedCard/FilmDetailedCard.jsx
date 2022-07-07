@@ -12,47 +12,64 @@ import evalField from '../../utils'
 
 const FilmDetailedCard = props => {
 
+    // nav tools
     let navigate = useNavigate()
-    
+
     const goTo = (destination) => {
         navigate(destination)
     }
 
+    // data of logged user
     const loggedUser = useSelector(userData);
 
+    // hook
     const [rent, setRent] = useState({
         filmId: props.data.id,
+        pricePerDay: props.data.price,
+        days: 0,
         returnDate: "",
-        totalPrice: 4,
+        totalPrice: 0,
         isError: false,
         message: ""
     })
 
+    // handles the release date input
     const handleInput = (event) => {
-        setRent({
-            ...rent,
-            [event.target.name]: event.target.value
-        })
+        const numDays = event.target.value;
+        const date = new Date(); // current date
+        const releaseDate = new Date((date.getTime() * 1) + rent.days * 24 * 60 * 60 * 1000); // add rent.days in miliseconds 
+        if (evalField('days', numDays)) {
+            setRent({
+                ...rent,
+                days: numDays,
+                totalPrice: numDays * rent.pricePerDay,
+                returnDate: releaseDate
+            })
+        } else {
+            setRent({
+                ...rent,
+                days: numDays,
+                totalPrice: 0,
+                returnDate: ""
+            })
+        }
     }
 
+    // eval the release date provided and register the order if the date is valid
     const rentFilm = (event) => {
-
         event.preventDefault()
-        console.log("entro")
-
-        if (!evalField('returnDate', rent.returnDate)) {
+        if (!evalField('days', rent.days)) {
             setRent({
                 ...rent,
                 isError: true,
-                message: 'Reenter a valid date'
-            });
-            console.log(rent.message)
+                message: 'Enter a valid number of days'
+            })
             return;
         } else {
             setRent({
                 ...rent,
                 isError: false,
-                message: ""
+                message: "Order registered"
             });
 
             registerOrder()
@@ -63,9 +80,8 @@ const FilmDetailedCard = props => {
         }
     }
 
+    // register an order in data base
     const registerOrder = async () => {
-        console.log("llego al registerOrder")
-        console.log("token.id" + loggedUser.user.id)
         const config = {
             headers: { "Authorization": `Bearer ${loggedUser.token}` }
         }
@@ -75,33 +91,49 @@ const FilmDetailedCard = props => {
                 returnDate: rent.returnDate,
                 totalPrice: rent.totalPrice
             },
-            config)
+            config).then((resp) => {
+                console.log(resp)
+            }).catch(error => {
+                console.log(error)
+            })
     }
 
-    const RentFilmForm = () => {
-
+    // renders buttons depending on whether there is a logged user
+    const RentFilmButtons = () => {
         if (!loggedUser?.user) {
             return (
-                <div className="RentFilmForm" >
+                <div>
                     <button className="submitOrder" onClick={() => goTo("/login")} >Log In</button>
                     <button className="submitOrder" onClick={() => goTo("/signup")} >Sign Up</button>
                 </div>
             )
         } else {
             return (
-                <form className="RentFilmForm" onSubmit={rentFilm} >
-                    <input className="dateInput" onChange={handleInput} type="text" name="returnDate" value={rent.returnDate} placeholder="2022-06-27" />
-                    <button className="submitOrder" type="submit">Order</button>
-                </form>
+                <button className="submitOrder" type="submit">Order</button>
             )
         }
     }
 
+    // renders the detailed card of the film provided in props
     return (
         <div className="FilmDetailedCard">
             <div className="cardImgColumn" >
                 <img className="cardImg" src={props.data.image} />
-                <RentFilmForm />
+                <form className="RentFilmForm" onSubmit={rentFilm} >
+                    <div>
+                        <label className="dateLabel">Days: </label>
+                        <input className="dateInput" onChange={handleInput} type="text" name="returnDate" value={rent.days} placeholder="days" />
+                    </div>
+                    <div>
+                        <label className="dateLabel">Price: </label>
+                        <input className="dateInput" type="text" disabled="true" name="returnDate" value={rent.totalPrice} />
+                    </div>
+
+                    <RentFilmButtons />
+                </form>
+                <div className="errorMessage">
+                    {rent.message}
+                </div>
             </div>
             <div className="cardParaph">
                 <p className="cardText title" >Title: {props.data.title}</p>

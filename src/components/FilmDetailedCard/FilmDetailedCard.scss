@@ -21,12 +21,17 @@
                 color: white;
                 background-color: black;
                 border-radius: 1em;
-                width: 12em;
+                width: 3em;
+            }
+
+            .dateLabel {
+                align-self: center;
+                color: white;
+                font-size: 0.9em;
             }
 
             .submitOrder {
-                padding: 0.5em;
-                width: 6em;
+                padding: 0.4em;
                 border-radius: 1em;
                 background-color: red;
                 color: white;
@@ -41,6 +46,12 @@
             }
         }
 
+        .errorMessage{
+            color: rgb(255, 255, 0);
+            font-size: 1em;
+            align-self: center;
+        }
+
         .cardImg {
             object-fit: contain;
             padding: 5px;
@@ -50,7 +61,6 @@
             align-self: flex-start;
         }
     }
-
 
     .cardParaph {
         display: flex;

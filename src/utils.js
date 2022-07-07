@@ -52,6 +52,7 @@ const evalField = (key, value) => {
         case 'address': return evalAddress(value);
         case 'password': return evalPassword(value);
         case 'title': return evalTitle(value);
+        case 'days': return evalNaturalNumber(value);
         case 'year': return evalNaturalNumber(value);
         case 'director': return evalName(value);
         case 'genre': return evalGenre(value);
