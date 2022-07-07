@@ -58,7 +58,7 @@ const FilmDetailedCard = props => {
     // eval the release date provided and register the order if the date is valid
     const rentFilm = (event) => {
         event.preventDefault()
-        if (!evalField('days', rent.days)) {
+        if (!evalField('days', rent.days) || (rent.days == 0)) {
             setRent({
                 ...rent,
                 isError: true,
