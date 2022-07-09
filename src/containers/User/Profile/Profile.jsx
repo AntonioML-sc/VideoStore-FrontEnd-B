@@ -15,7 +15,11 @@ const Profile = () => {
     let [orders, setOrders] = useState([]);
 
     const dispatch = useDispatch();
+
+    // User's data
     const datos = useSelector(userData);
+    const createdAt = new Date(datos?.user.createdAt).toLocaleDateString();
+
     let navigate = useNavigate();
 
     // Log out and go to home page
@@ -144,7 +148,7 @@ const Profile = () => {
                         </div>
                         <br></br>
                         <div className="profileItem">
-                            <h3>Date of creation: {datos?.user.createdAt}</h3>
+                            <h3>Date of creation: {createdAt}</h3>
                         </div>
                     </div>
                 </div>
