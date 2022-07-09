@@ -74,3 +74,19 @@
     justify-content: center;
     align-items: center;
 }
+
+.ElemList {
+    display: flex;
+    flex-direction: column;
+
+    .elemTitle {
+        align-self: center;
+    }
+
+    .list{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+}
