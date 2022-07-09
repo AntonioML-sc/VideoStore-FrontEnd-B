@@ -26,33 +26,44 @@ const Profile = () => {
 
     useEffect(() => {
 
-        const config = {
-            headers: { "Authorization": `Bearer ${datos.token}` }
-        }
+        // redirects to /login it there is not a logged user
+        if (!datos?.user) {
+            navigate("/login");
 
-        // get a list of all users from db. Visible only if logged user is admin.
-        async function fetchUsers() {
-            await axios.get('https://aml-mysql-28-06-22-videostore.herokuapp.com/users/', config)
-                .then(resp => {
-                    setUsers(resp.data);
-                });
-        }
+        } else {
 
-        // get a list of all of the logged user's orders registered in db.
-        async function fetchOrders() {
-            await axios.get('https://aml-mysql-28-06-22-videostore.herokuapp.com/orders/userOrders', config)
-                .then(resp => {
-                    setOrders(resp.data)
-                });
-        }
+            const config = {
+                headers: { "Authorization": `Bearer ${datos.token}` }
+            }
 
-        fetchOrders();
-        fetchUsers();
+            // get a list of all users from db. Visible only if logged user is admin.
+            async function fetchUsers() {
+                await axios.get('https://aml-mysql-28-06-22-videostore.herokuapp.com/users/', config)
+                    .then(resp => {
+                        setUsers(resp.data);
+                    }).catch(error => { });
+            }
+
+            // get a list of all of the logged user's orders registered in db.
+            async function fetchOrders() {
+                await axios.get('https://aml-mysql-28-06-22-videostore.herokuapp.com/orders/userOrders', config)
+                    .then(resp => {
+                        setOrders(resp.data)
+                    }).catch(error => { });
+            }
+
+            fetchOrders();
+
+            if (datos?.user.role == "admin") {
+                fetchUsers();
+            }
+            
+        }
     }, [])
 
     // renders the list of users if admin is logged
     const UserList = () => {
-        if (datos.user.role == "admin") {
+        if (datos?.user.role == "admin") {
             if (users.length > 0) {
                 return (
                     <div className="ElemList">
@@ -88,7 +99,7 @@ const Profile = () => {
             return (
                 <div className="ElemList" >
                     <div className="elemTitle">
-                        <h3>Orders Registered</h3>
+                        <h3>Your orders</h3>
                         <br></br>
                     </div>
                     <div className="list">
@@ -111,41 +122,43 @@ const Profile = () => {
     }
 
     // renders the container
-    return (
-        <div className="profileWall">
-            <div id="profileCard">
+    if (datos?.user) {
+        return (
+            <div className="profileWall">
+                <div id="profileCard">
 
-                <div id="profilePhoto"></div>
+                    <div id="profilePhoto"></div>
 
-                <div id="profileInfo">
-                    <div className="profileItem">
-                        <h3 id="profileItemName">{datos.user.name}</h3>
-                    </div>
-                    <div className="profileItem">
-                        <h3>{datos.user.email}</h3>
-                    </div>
-                    <div className="profileItem">
-                        <h3>{datos.user.address}</h3>
-                    </div>
-                    <div className="profileItem">
-                        <h3>{datos.user.phone}</h3>
-                    </div>
-                    <br></br>
-                    <div className="profileItem">
-                        <h3>Date of creation: {datos.user.createdAt}</h3>
+                    <div id="profileInfo">
+                        <div className="profileItem">
+                            <h3 id="profileItemName">{datos?.user.name}</h3>
+                        </div>
+                        <div className="profileItem">
+                            <h3>{datos?.user.email}</h3>
+                        </div>
+                        <div className="profileItem">
+                            <h3>{datos?.user.address}</h3>
+                        </div>
+                        <div className="profileItem">
+                            <h3>{datos?.user.phone}</h3>
+                        </div>
+                        <br></br>
+                        <div className="profileItem">
+                            <h3>Date of creation: {datos?.user.createdAt}</h3>
+                        </div>
                     </div>
                 </div>
+
+                <button id="logoutButton" onClick={getout}>
+                    Log out
+                </button>
+
+                <OrderList />
+
+                <UserList />
             </div>
-
-            <button id="logoutButton" onClick={getout}>
-                Log out
-            </button>
-
-            <OrderList />
-
-            <UserList />
-        </div>
-    )
+        )
+    }
 }
 
 export default Profile
