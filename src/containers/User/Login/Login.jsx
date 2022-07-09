@@ -73,7 +73,9 @@ const Login = props => {
             <div className="errorMessage">
                 {msgError}
             </div>
-
+            <div className="addsign" onClick={() =>navigate("/signup")}>
+            Still without DreamFilm? <br /> Register now and get 100 hours free!
+            </div>
         </div>
     )
 }
