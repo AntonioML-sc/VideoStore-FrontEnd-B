@@ -10,6 +10,7 @@ const OrderCard = props => {
           <Card.Text ><strong>Movie: </strong>{props.data.Movie}</Card.Text>
           <Card.Text><strong>From: </strong>{props.data.FromDate}</Card.Text>
           <Card.Text><strong>Until: </strong>{props.data.UntilDate}</Card.Text>
+          <Card.Text><strong>Price: </strong>{props.data.Price} €</Card.Text>
         </Card.Body>
       </Card>
     )
