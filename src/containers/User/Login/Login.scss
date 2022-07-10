@@ -6,8 +6,10 @@ body{
 }
 .loginWall{
     text-align: center;
+    padding: 2em;
     width: 100vw;
-    height: 78vh;
+    min-height: 78vh;
+    height: auto;
     background: linear-gradient(rgba(0, 0, 0, 0.699) 20%, rgba(17, 0, 0, 0.534), rgba(48, 0, 0, 0.507), rgb(59, 0, 0, 0.493), rgba(116, 0, 0, 0.39), rgb(59, 0, 0, 0.493), rgba(48, 0, 0, 0.493), rgb(17, 0, 0, 0.534), rgba(0, 0, 0, 0.699) 80%);
 
     display: flex;
