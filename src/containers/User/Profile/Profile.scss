@@ -9,11 +9,13 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-top: 1em;
+    padding-bottom: 1em;
 
     #profileCard{
         background-color: black;
-        border-radius: 1em;
-        padding: 0.5em;
+        border-radius: 1.5em;
+        padding: 0.4em;
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -30,17 +32,13 @@
 
         #profileInfo{
             background-color: rgba(255, 0, 0, 0.123);
-            padding: 0.5em;
+            padding: 0.3em;
             margin: 0.5em;
 
             border-radius: 1.5em;
 
             .profileItem{
                 margin: 1em;
-
-                h3{
-                    font-size: 1em;
-                }
 
                 #profileItemName{
                     border-bottom: 0.2em solid red ;
@@ -49,7 +47,7 @@
                 }
 
                 .profileItemText{
-                    font-size: 1.5em;
+                    font-size: 1.3em;
                 }
             }
         }
@@ -81,7 +79,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
+    align-items: stretch;
 }
 
 .ElemList {
@@ -98,4 +96,13 @@
         justify-content: center;
         align-items: center;
     }
+}
+
+.testsCard {
+    height: 200px;
+    width: 150px;
+    background-color: blue;
+    border-radius: 1em;
+    border: solid lime 0.1em;
+    margin: 0.5em;
 }

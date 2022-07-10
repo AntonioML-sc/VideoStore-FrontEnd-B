@@ -73,7 +73,7 @@ const Profile = () => {
                     <div className="ElemList">
                         <div className="elemTitle">
                             <br></br>
-                            <h3>Users Registered</h3>
+                            <h4>Users Registered</h4>
                             <br></br>
                         </div>
                         <div className="list">
@@ -89,7 +89,7 @@ const Profile = () => {
                 return (
                     <div className="elemTitle">
                         <br></br>
-                        <h3>No Users Registered. We are broke!</h3>
+                        <h4>No Users Registered. We are broke!</h4>
                         <br></br>
                     </div>
                 )
@@ -103,7 +103,7 @@ const Profile = () => {
             return (
                 <div className="ElemList" >
                     <div className="elemTitle">
-                        <h3>Your orders</h3>
+                        <h4>Your orders</h4>
                         <br></br>
                     </div>
                     <div className="list">
@@ -118,7 +118,7 @@ const Profile = () => {
         } else {
             return (
                 <div className="elemTitle">
-                    <h3>You do not have orders registered. Look at our catalog and enjoy! </h3>
+                    <h4>You do not have orders registered. Look at our catalog and enjoy! </h4>
                     <br></br>
                 </div>
             )
