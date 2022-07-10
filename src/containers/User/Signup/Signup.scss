@@ -8,9 +8,9 @@
     color: white;
     width: 100vw;
     min-height: 78vh;
-   height: auto;
-   max-height: auto;
-   padding-top: 2em;
+    height: auto;
+    max-height: auto;
+    padding-top: 1.4em;
 
     .signupitem {
         padding: 0.2em;
@@ -63,7 +63,7 @@
             background-color: black;
             border-radius: 1em;
             transition: 0.3s;
-            cursor: pointer;            
+            cursor: pointer;
         }
     }
 
@@ -71,21 +71,22 @@
         color: yellow;
     }
 
-    .offerCard{
+    .offerCard {
         padding: 0.3em;
         background-color: rgb(201, 0, 0);
         width: 22em;
         border-radius: 1em;
+        padding-bottom: 0.1em;
 
-        h1{
+        h1 {
             color: black;
         }
 
-        p{
+        p {
             font-size: 1.2em;
             font-weight: bolder;
         }
     }
 
-    
+
 }
