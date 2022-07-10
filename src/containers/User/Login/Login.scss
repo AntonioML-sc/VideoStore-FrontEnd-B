@@ -8,7 +8,6 @@ body{
     text-align: center;
     width: 100vw;
     height: 78vh;
-    // background: rgba(0, 0, 0, 0.466);
     background: linear-gradient(rgba(0, 0, 0, 0.699) 20%, rgba(17, 0, 0, 0.534), rgba(48, 0, 0, 0.507), rgb(59, 0, 0, 0.493), rgba(116, 0, 0, 0.39), rgb(59, 0, 0, 0.493), rgba(48, 0, 0, 0.493), rgb(17, 0, 0, 0.534), rgba(0, 0, 0, 0.699) 80%);
 
     display: flex;
@@ -26,6 +25,7 @@ body{
         padding: 0.4em;
         border-color: red;
         color: white;
+        height: 2.2em;
         background-color: black;
         border-radius: 1em;
         width: 18em;
