@@ -15,7 +15,7 @@ const Header = () => {
 
     if (!datosUsuario?.user) {
         return (
-            <Navbar className="Headerwall text-white m-0 p-0" collapseOnSelect expand="md" variant="dark">
+            <Navbar collapseOnSelect className="Headerwall text-white m-0 p-0" expand="md" variant="dark">
                 <Container fluid className="black">
                     <Navbar.Brand as={Link} to="/"><img className="logo1 img" src={logo} alt="" /></Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" className="py-0 px-0 my-0 mx-3" />
@@ -35,7 +35,7 @@ const Header = () => {
         );
     } else {
         return (
-            <Navbar className="Headerwall text-white m-0 p-0" collapseOnSelect expand="md" variant="dark">
+            <Navbar collapseOnSelect className="Headerwall text-white m-0 p-0" expand="md" variant="dark">
                 <Container fluid className="black">
                     <Navbar.Brand as={Link} to="/"><img className="logo1 img" src={logo} alt="" /></Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" className="py-0 px-0 my-0 mx-3" />
