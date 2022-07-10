@@ -8,12 +8,16 @@
     .cardImgColumn {
         display: flex;
         flex-direction: column;
+        min-width: 240px;
+        flex-shrink: 1;
 
         .RentFilmForm {
             display: flex;
             flex-direction: row;
             justify-content: space-around;
             margin-bottom: 0.4em;
+            min-width: 240px;
+            width: auto;
 
             .dateInput {
                 padding: 0.4em;
@@ -28,6 +32,8 @@
                 align-self: center;
                 color: white;
                 font-size: 0.9em;
+                margin-right: 2px;
+                margin-left: 2px;
             }
 
             .submitOrder {
@@ -46,7 +52,7 @@
             }
         }
 
-        .errorMessage{
+        .errorMessage {
             color: rgb(255, 255, 0);
             font-size: 1em;
             align-self: center;
@@ -55,26 +61,30 @@
         .cardImg {
             object-fit: contain;
             padding: 5px;
-            max-width: 30vw;
+            max-width: 310px;
+            min-width: 250px;
             width: auto;
             height: auto;
-            align-self: flex-start;
         }
     }
 
     .cardParaph {
         display: flex;
         flex-direction: column;
-        max-width: 30vw;
+        max-width: 450px;
         padding-left: 10px;
+        padding-top: 10px;
+        flex-shrink: 10;
 
         .cardText {
             padding: 5px;
+            margin: 0%;
         }
 
         .title {
             font-weight: bold;
             font-size: large;
+            align-self: center;
         }
 
         .fieldName {
@@ -84,5 +94,20 @@
         .synopsis {
             font-style: italic;
         }
+    }
+}
+
+@media(max-width: 576px) {
+    .FilmDetailedCard {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .cardImgColumn {
+            .cardImg {
+                min-width: 350px;
+                width: 350px;
+            }
+        }        
     }
 }
