@@ -138,17 +138,17 @@ const Profile = () => {
                             <h3 id="profileItemName">{datos?.user.name}</h3>
                         </div>
                         <div className="profileItem">
-                            <h3>{datos?.user.email}</h3>
+                            <h3 className="profileItemText">{datos?.user.email}</h3>
                         </div>
                         <div className="profileItem">
-                            <h3>{datos?.user.address}</h3>
+                            <h3 className="profileItemText">{datos?.user.address}</h3>
                         </div>
                         <div className="profileItem">
-                            <h3>{datos?.user.phone}</h3>
+                            <h3 className="profileItemText">{datos?.user.phone}</h3>
                         </div>
                         <br></br>
                         <div className="profileItem">
-                            <h3>Date of creation: {createdAt}</h3>
+                            <h3 className="profileItemText">Date of creation: {createdAt}</h3>
                         </div>
                     </div>
                 </div>

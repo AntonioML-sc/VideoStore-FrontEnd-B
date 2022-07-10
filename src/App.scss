@@ -1,3 +1,6 @@
+
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+
 @font-face {
   font-family: "prototype";
   src: local("./assets/Prototype.ttf"), url("./assets/Prototype.ttf"); 
@@ -21,4 +24,7 @@
 body{
   overflow-x: hidden;
 }
-
+a {
+  text-decoration: none !important;
+  color: white !important;
+}
