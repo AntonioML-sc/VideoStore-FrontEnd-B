@@ -7,7 +7,9 @@
     box-sizing: border-box;
     color: white;
     width: 100vw;
-    height: 78vh;
+    min-height: 78vh;
+   height: auto;
+   max-height: auto;
 
     .signupitem {
         padding: 0.3em;
@@ -27,6 +29,7 @@
             border: 0.1em solid red;
             transition: 0.3s;
             border-radius: 2em;
+            height: 2.1em;
         }
 
         .inputitem:hover {
@@ -46,6 +49,10 @@
             background-color: red;
             border-radius: 1em;
             transition: 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 2.2em;
         }
 
         .submitSignupItem:hover {
@@ -64,10 +71,10 @@
     }
 
     .offerCard{
-        margin-top: 2em;
-        padding: 1em;
+        // margin-top: 0em;
+        padding: 0.3em;
         background-color: rgb(201, 0, 0);
-        width: 20em;
+        width: 22em;
         border-radius: 1em;
 
         h1{
