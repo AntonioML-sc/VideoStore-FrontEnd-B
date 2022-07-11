@@ -35,10 +35,10 @@ const FilmDetailedCard = props => {
 
     // handles the release date input
     const handleInput = (event) => {
-        const numDays = event.target.value;
+        const numDays = event.target.value;        
         const date = new Date(); // current date
-        const releaseDate = new Date((date.getTime() * 1) + rent.days * 24 * 60 * 60 * 1000); // add rent.days in miliseconds 
         if (evalField('days', numDays)) {
+            const releaseDate = new Date((date.getTime() * 1) + numDays * 24 * 60 * 60 * 1000); // add rent.days in miliseconds
             setRent({
                 ...rent,
                 days: numDays,
