@@ -12,7 +12,7 @@ const UserCard = props => {
           <div><strong>Phone:</strong><br />{props.data.phone}</div>
           <div><strong>Address:</strong><br />{props.data.address}</div>
           <div><strong>Role:</strong><br />{props.data.role}</div>
-          <div><strong>Created At:</strong><br />{props.data.createdAt}</div>
+          <div><strong>Created At:</strong><br />{new Date(props.data.createdAt).toLocaleDateString()}</div>
         </div>
       </div>
     )

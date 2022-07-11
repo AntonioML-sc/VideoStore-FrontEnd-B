@@ -18,7 +18,6 @@ const Profile = () => {
 
     // User's data
     const datos = useSelector(userData);
-    const createdAt = new Date(datos?.user.createdAt).toLocaleDateString();
 
     let navigate = useNavigate();
 
@@ -61,7 +60,7 @@ const Profile = () => {
             if (datos?.user.role == "admin") {
                 fetchUsers();
             }
-            
+
         }
     }, [])
 
@@ -148,7 +147,7 @@ const Profile = () => {
                         </div>
                         <br></br>
                         <div className="profileItem">
-                            <h3 className="profileItemText">Date of creation: {createdAt}</h3>
+                            <h3 className="profileItemText">Date of creation: {new Date(datos?.user.createdAt).toLocaleDateString()}</h3>
                         </div>
                     </div>
                 </div>
